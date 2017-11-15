@@ -1,31 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class MyClock extends React.Component {
+class Vggg extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { "date": new Date() }
+        this.state = { "dateobj": new Date() }
     }
-    componentIdMounted() {
+    componentDidMount() {
         this.timerId = '';
-        setInterval(() => { this.tick() }, 1000)
+        setInterval(() => { this.ticker() }, 1000)
     }
     componentWillUnmount() {
         clearInterval(this.timerId);
     }
-    tick() {
-        setState(
-            { "date": new Date() }
+    ticker() {
+        this.setState(
+            { "dateobj": new Date() }
         )
     }
     render() {
 
         return (
-            <h1> Time is {this.state.date.toLocaleTimeString()} </h1>
+            <h1> Time is {this.state.dateobj.toLocaleTimeString()} </h1>
         )
     }
 }
 ReactDOM.render(
-    <MyClock />,
+    <Vggg />,
     document.getElementById('root')
 );
